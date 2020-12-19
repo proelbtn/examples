@@ -7,16 +7,11 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[dependencies.tokio]
-version = "0.2"
-features = ["full"]
-
-[dependencies.hyper]
-version = "0.13"
-
-[dependencies.hyper-tls]
-version = "0.4"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "0.2", features = ["full"] }
+hyper = "0.13"
+hyper-tls = "0.4"
 
 [[example]]
 name = "http-get"
@@ -29,3 +24,7 @@ path = "examples/https-get.rs"
 [[example]]
 name = "http-post"
 path = "examples/http-post.rs"
+
+[[example]]
+name = "http-server"
+path = "examples/http-server.rs"
