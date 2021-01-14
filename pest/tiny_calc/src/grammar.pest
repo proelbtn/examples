@@ -1,0 +1,10 @@
+digit_zero = _{ "0" }
+digit_not_zero = _{ '1'..'9' }
+digit = _{ digit_zero | digit_not_zero }
+
+number = { digit_zero | (digit_not_zero ~ digit*) }
+
+value = { number | "(" ~ expr ~ ")" }
+product = { value ~ (("*" | "/") ~ value)* }
+sum = { product ~ (("+" | "-") ~ product)* }
+expr = { sum }
